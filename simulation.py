@@ -37,7 +37,8 @@ class Sim:
             for target in toggle : 
                 self.grid.cells[target[0]][target[1]] += 1 ;
                 self.grid.cells[target[0]][target[1]] %= 2 ;
-        
+            if  len(toggle) == 0 : 
+                self.run = False
         return; 
     
     def isrunning(self): 
