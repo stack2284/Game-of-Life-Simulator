@@ -17,16 +17,28 @@ simulation = Sim(WINDOW_WIDTH , WINDOW_HEIGHT , CELL_SIZE)
 
 ##game loop
 while True : 
-    window.fill((255 ,255, 255))
     #event handeling 
     for event in pygame.event.get() : 
         if event.type == pygame.QUIT: 
             pygame.quit()
             sys.exit()
-              
+        if event.type == pygame.KEYDOWN : 
+            if event.key == pygame.K_r and simulation.run == False:
+                simulation.grid.inti_random() 
+                continue
+            if event.key == pygame.K_SPACE : 
+                simulation.Toggle_Sim()
+            if event.key == pygame.K_UP : 
+                FRAMES_PER_SECOND += 2 
+            if event.key == pygame.K_DOWN and FRAMES_PER_SECOND >= 5: 
+                FRAMES_PER_SECOND -= 2
+                
+            
+            
     #updating state 
     simulation.update()
     #drawing 
+    window.fill((255 ,255, 255))
     simulation.draw(window)
     pygame.display.update()
     clock.tick(FRAMES_PER_SECOND)
