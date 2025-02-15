@@ -1,6 +1,6 @@
 import pygame , random
 
-ALIVE = (255 , 255 , 255) 
+ALIVE = (0 , 255 , 0) 
 DEAD = (0 , 0 , 0)
 class Grid: 
     def __init__(self , width , height , cell_size):

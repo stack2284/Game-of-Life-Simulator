@@ -3,10 +3,10 @@ from simulation import Sim
 
 pygame.init();
 
-WINDOW_WIDTH = 500## dimensions of window 
+WINDOW_WIDTH = 1000## dimensions of window 
 WINDOW_HEIGHT = 1000
 FRAMES_PER_SECOND = 10 
-CELL_SIZE = 10
+CELL_SIZE = 40
  
 window = pygame.display.set_mode((WINDOW_WIDTH , WINDOW_HEIGHT))
 
