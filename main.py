@@ -14,11 +14,7 @@ pygame.display.set_caption("SIMULATION")
 clock = pygame.time.Clock();
 
 simulation = Sim(WINDOW_WIDTH , WINDOW_HEIGHT , CELL_SIZE)
-simulation.grid.cells[0][0] = 1
-simulation.grid.cells[0][1] = 1
-simulation.grid.cells[0][2] = 1
-simulation.grid.cells[1][0] = 1
-print(simulation.count_live_n(simulation.grid , 0, 24))
+
 ##game loop
 while True : 
     window.fill((255 ,255, 255))
@@ -29,7 +25,7 @@ while True :
             sys.exit()
               
     #updating state 
-    
+    simulation.update()
     #drawing 
     simulation.draw(window)
     pygame.display.update()

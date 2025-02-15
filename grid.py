@@ -1,4 +1,4 @@
-import pygame 
+import pygame , random
 
 ALIVE = (255 , 255 , 255) 
 DEAD = (0 , 0 , 0)
@@ -16,3 +16,10 @@ class Grid:
             for column in range(self.columns):
                 color = ALIVE if self.cells[row][column] else DEAD
                 pygame.draw.rect(window , color , (column*self.cell_size , row*self.cell_size , self.cell_size - 1 ,self.cell_size - 1));
+                
+    def inti_random(self) : 
+        for i in range(self.rows) : 
+            for j in range(self.columns) : 
+                self.cells[i][j] = random.choice([1 , 0 , 0 , 0])
+                
+                
