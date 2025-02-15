@@ -8,7 +8,6 @@ neighbourhood = [
 class Sim:
     def __init__(self , width , height , cell_size): 
         self.grid = Grid(width , height , cell_size)
-        self.grid.inti_random()
         self.run = False 
     
     def draw(self , window) : 
@@ -55,9 +54,14 @@ class Sim:
             self.run = False 
         else :
             self.run = True 
+            
+    def Toggle_Cell (self , i , j): 
+        self.grid.cells[i][j] = 1 - self.grid.cells[i][j];
 
-
-        
+    def sim_clear(self) : 
+        for row in range(self.grid.rows): 
+                for col in range(self.grid.columns) : 
+                    self.grid.cells[row][col] = 0;
         
 
   
